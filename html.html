@@ -236,11 +236,15 @@
                     <section>
                         <h4><code>&lt;head&gt;</code> element</h4>
                         <figure>
-                            <pre><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
+                            <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;The title of your page goes here&lt;/title&gt;
+    &lt;!-- declaration that maintains user zooming --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;My Practice Site&lt;/title&gt;
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="assets/css/style.css"&gt;
   &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
@@ -262,11 +266,15 @@
                     <section>
                         <h4><code>&lt;body&gt;</code> Element</h4>
                         <figure>
-                          <pre><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
+                          <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
   &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;Title of your page goes here&lt;/title&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;!-- declaration that maintains user zooming --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;My Practice Site&lt;/title&gt;
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="assets/css/style.css"&gt;
   &lt;/head&gt;
   &lt;body&gt;
     Content goes in here.
@@ -371,47 +379,6 @@
                         </div>
                     </section>
 
-                    <section>
-                        <h3>
-                          Looking Ahead: CSS Defines Different Positioning Schemes for Changing Flows
-                          <br />
-                          <small>(See Coyer's <a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/" target="_blank">elaboration</a>)</small>
-                         </h3>
-                        <ul>
-                            <li class="fragment">Normal flow</li>
-                            <li class="fragment">Relative flow</li>
-                            <ul class="fragment">
-                              <li class="fragment">Float: <code>float: left;</code></li>
-                              <li class="fragment">Absolute positioning: <code>position: absolute;</code></li>
-                              <li class="fragment">Fixed positioning: <code>position: fixed;</code></li>
-                            </ul>
-                            <li class="fragment">
-                              <a href="https://codepen.io/lndgrn/pen/vNXrGE?editors=1100#0" target="_blank">Codepen example</a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- <section>
-                        <h3>
-                          Elements are Defined by the Box Model
-                        </h3>
-                        <figure>
-                            <img class="transparent" src="img/box-model.png" alt="box model consists of content, padding, border and margin" style="height: 300px;">
-                        </figure>
-                    </section> -->
-
-                    <!-- <section>
-                      <h3>Codepen Sandbox: Inline &amp; Block Elements</h3>
-                      <ul>
-                        <li>
-                          Part of your homework to review before Wednesday's class:
-                        </li>
-                      </ul>
-                      <figure>
-                        <p data-height="350" data-theme-id="0" data-slug-hash="zdymKE" data-default-tab="html,result" data-user="lndgrn" data-embed-version="2" data-pen-title="HTML: Block and Inline Elements" class="codepen">See the Pen <a href="https://codepen.io/lndgrn/pen/zdymKE/">HTML: Block and Inline Elements</a> by Chris Lindgren (<a href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-                      </figure>
-                    </section> -->
 
                 </section>
 
@@ -432,28 +399,35 @@
                     <section>
                         <h3>
                           Write Semantic, Containing <em>Block</em> Elements
-                          <br/>
-                          <small>(with some <em>attributes</em>)</small>
                         </h3>
                         <figure>
-                            <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
+                          <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;My Practice DataStory&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-  &lt;/header&gt;
-  &lt;article id="datastory"&gt;
-    &lt;section id="personal-digital"&gt;
-    &lt;/section&gt;
-    &lt;section id="social-digital"&gt;
-    &lt;/section&gt;
-  &lt;/article&gt;
-  &lt;footer id="resources"&gt;
-  &lt;/footer&gt;
-&lt;/body&gt;
+    &lt;!-- declaration that maintains user zooming --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;My Practice Site&lt;/title&gt;
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="assets/css/style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Skip link for keyboard readers, hide with CSS --&gt;
+    &lt;a href="#resume"&gt;&lt;/a&gt;
+
+    &lt;header&gt;
+    &lt;/header&gt;
+    &lt;main id="resume"&gt;
+      &lt;section id="contact"&gt;
+      &lt;/section&gt;
+      &lt;section id="education"&gt;
+      &lt;/section&gt;
+      &lt;!-- etc., etc. --&gt;
+    &lt;/main&gt;
+    &lt;footer id="social-media"&gt;
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
                         </figure>
