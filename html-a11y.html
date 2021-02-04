@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Writing Accessible HTML</title>
+        <!-- =============================================
+            Adapted and modified content from GU Yiling:
+            http://justineo.github.io/slideshows/writing-css/
+            ==============================================-->
+
+        <meta name="description" content="A brief introduction of CSS.">
+        <meta name="author" content="GU Yiling, modified by Chris Lindgren">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/just.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="css/zenburn.css">
+
+        <style>
+            var::before {
+                content: "[";
+            }
+            var::after {
+                content: "]";
+            }
+            var::before,
+            var::after {
+                color: #666;
+                font-style: normal;
+            }
+
+            iframe {
+                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            }
+            span.type::before {
+                content: "‘<";
+            }
+            span.type::after {
+                content: ">’";
+            }
+        </style>
+
+        <!-- If the query includes "print-pdf", include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( "link" );
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = "../../reveal.js/css/print/pdf.css";
+                document.getElementsByTagName( "head" )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+                <section>
+                    <h1>
+                      Writing Accessible <abbr title="HyperText Markup Language">HTML</abbr>
+                    </h1>
+                </section>
+
+                <!-- TOC -->
+                <section>
+                    <h2>In this demo-lecture:</h2>
+                    <style>
+                      #overview-list li {
+                          list-style-type: none;
+                      }
+
+                      #overview-list .fa {
+                          display: inline-block;
+                          width: 40px;
+                      }
+                    </style>
+                    <ul id="overview-list">
+                        <li><span class="fa fa-check"></span> What is A11Y?</li>
+                        <li><span class="fa fa-check"></span> ARIA & Its "Landmarks"</li>
+                    </ul>
+                </section>
+                
+                <!-- WHAT'S A11Y? -->
+                <section>
+                  <section>
+                    <h2>What is A11Y?</h2>
+                    <ul>
+                      <li class="fragment">
+                          People are multiply abled across our senses, mental abilities, and physical abilities
+                      </li>
+                      <li class="fragment">
+                          Accessibility involves tools and practices to ensure content is usable for everyone
+                      </li>
+                    </ul>
+                  </section>
+
+                  <!-- DOM vs A11Y TREE -->
+                  <section>
+                    <h2><strong><abbr>DOM</abbr></strong> (Document Object Model) Tree
+                    <br>
+                    vs
+                    <br>
+                    <strong>Acessibility</strong> Tree</h2>
+                    <ul>
+                      <li class="fragment">
+                          <strong>DOM</strong>: HTML declares a document tree, where <code>&lt;html&gt;</code> is the root parent element.
+                      </li>
+                      <li class="fragment">
+                          <strong>Accessibility Tree</strong>: HTML also produces a different tree for ARIAs (Accessible Rich Internet Applications)
+                      </li>
+                      <li class="fragment">
+                          Let's inspect this <a href="https://engl-4814.github.io/demos/aria-landmark/index.html" target="_blank" rel="noopenner">example site</a> in Chrome or Firefox.
+                      </li>
+                    </ul>
+                  </section>
+
+                  <!-- POUR OVERVIEW -->
+                  <section>
+                    <h3>WCAG 2.0 POUR Model</h3>
+                    <ul>
+                      <li class="fragment">
+                          <b>Perceivable</b>: Can everyone perceive all of the elements on the page? Examples: alt attribute for <code>img</code>
+                      </li>
+                      <li class="fragment">
+                          <b>Operational</b>: Can everyone interact with the website regardless of disability? Examples: Navigable content (keyboards) or flash thresholds.
+                      </li>
+                      <li class="fragment">
+                          <b>Understandable</b>: Can all users understand the content on the site? Examples: terminology/discourse or consistent navigation and layout 
+                      </li>
+                      <li class="fragment">
+                          <b>Robust</b>: Is the content accessible on all kinds of devices, including assistive technologies? Examples: Consistent and well-documented use of <code>name</code> and <code>role</code> attributes.
+                      </li>
+                    </ul>
+                  </section>
+
+                  <!-- PERCEIVABLE -->
+                  <section>
+                      <h3>Perceivable: Can everyone perceive all of the elements on the page?</h3>
+                      <ul>
+                        <li class="fragment">
+                          <b>Adjustable font sizes</b>
+                        </li>
+                        <li class="fragment">
+                          <b>Alternative text descriptions for images</b>
+                          <figure>
+                            <pre><code class="html">&lt;img src="path/luna.png"
+     alt="Close up profile of a yellow lab dog smiling from ear to ear." /&gt;</code></pre>
+                          </figure>
+                        </li>
+                      </ul>
+                  </section>
+
+                  <!-- POUR 1 -->
+                  <section>
+                      <h3><b>POUR with Landmarks</b>: Can everyone <em>perceive</em>, <em>operate</em>, and <em>understand</em> the website <em>robustly</em> across devices?</h3>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/0hqhAIjE_8I?start=215" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </section>
+
+                  <!-- ARIA DEMO -->
+                  <section>
+                    <h3>A <a href="https://engl-4814.github.io/demos/aria-landmark/index.html" target="_blank" rel="noopenner">Landmark Demo</a></h3>
+                    <p>Let's simulate a screen reader!</p>
+                  </section>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
+                // parallaxBackgroundSize: "2100px 900px",
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: "js/classList.js", condition: function() { return !document.body.classList; } },
+                    { src: "js/marked.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
+                    { src: "js/markdown.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
+                    { src: "js/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: "js/zoom.js", async: true, condition: function() { return !!document.body.classList; } },
+                    { src: "js/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+        <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+    </body>
+</html>
