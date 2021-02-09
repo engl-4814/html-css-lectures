@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>All about the &lt;picture&gt;</title>
+  <!-- =============================================
+            Adapted and modified content from GU Yiling:
+            http://justineo.github.io/slideshows/writing-css/
+            ==============================================-->
+
+  <meta name="description" content="A brief introduction of CSS.">
+  <meta name="author" content="GU Yiling, modified by Chris Lindgren">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/just.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/zenburn.css">
+
+  <style>
+    var::before {
+      content: "[";
+    }
+
+    var::after {
+      content: "]";
+    }
+
+    var::before,
+    var::after {
+      color: #666;
+      font-style: normal;
+    }
+
+    iframe {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+
+    span.type::before {
+      content: "‘<";
+    }
+
+    span.type::after {
+      content: ">’";
+    }
+  </style>
+
+  <!-- If the query includes "print-pdf", include the PDF print sheet -->
+  <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = "../../reveal.js/css/print/pdf.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+  </script>
+
+  <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <div class="slides">
+      <section>
+        <h1>
+          Writing &amp; Designing with the <code>&lt;picture&gt;</code> element
+        </h1>
+      </section>
+
+      <!-- TOC -->
+      <section>
+        <h2>In this demo-lecture:</h2>
+        <style>
+          #overview-list li {
+            list-style-type: none;
+          }
+
+          #overview-list .fa {
+            display: inline-block;
+            width: 40px;
+          }
+        </style>
+        <ul id="overview-list">
+          <li><span class="fa fa-check"></span> What are <code>&lt;img&gt;</code> and <code>&lt;picture&gt;</code>?</li>
+          <li><span class="fa fa-check"></span> Responsive images with <code>srcset</code></li>
+        </ul>
+      </section>
+
+      <!-- IMG & PIXEL DENSITY -->
+      <section>
+        <section>
+          <h2>Pixel Density<br>&amp;<br>Responsive images with <code>srcset</code></h2>
+        </section>
+
+        <section>
+          <h2>The problem: Our device ecology</h2>
+          <p>
+            <a href="https://screensiz.es/" target="_blank" rel="noopenner">screensiz.es</a>
+          </p>
+        </section>
+
+        <section>
+          <figure>
+            <img src="img/retina-01.png" alt="Compare iPhone 3s screen and iPhone 4 phone's retina screen">
+            <figcaption>src: <a href="https://sebastien-gabriel.com/designers-guide-to-dpi/" title="Designer's guide to DPI" target="_blank" rel="noopenner">from Designer's guide to DPI</a></figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <p>
+            Higher the density => More data => <br> Consider range of devices &amp; data plans
+          </p>
+          <figure>
+            <img src="img/pixel-density-1.png" alt="Compare low, medium, and high pixel densities">
+            <figcaption>src: <a href="https://www.bbc.co.uk/gel/tablet/tablet-device-considerations/pixel-density" title="BBC - GEL (Global Experience Language) - Tablet : Pixel Density" target="_blank" rel="noopenner">BBC GEL</a></figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>Responsive media sources</h2>
+          <p>
+            Using the appropriate image size and file size impacts user experiences
+          </p>
+          <ul>
+            <li class="fragment">
+              Ensure images don't break layouts
+            </li>
+            <li class="fragment">
+              Choose image based on:
+              <ul>
+                <li class="fragment">pixel density</li>
+                <li class="fragment">device's network &amp; <abbr title="Operating System">O.S.</abbr></li>
+                <li class="fragment">screen size</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <p>
+            Create a range of resolutions for each image file
+          </p>
+          <figure>
+            <img src="img/multiple-file-resolutions.png" alt="Display a range of file resolutions per image file">
+            <figcaption>src: Simmons, J. (2020). HTML essential learning: Responsive images. LinkedIn Learning.</figcaption>
+          </figure>
+        </section>
+
+        <!-- srcset and pixel density -->
+        <section>
+          <h2>
+            <code>srcset</code> with <em>pixel density</em> parameters
+          </h2>
+          <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="html,result" data-user="jensimmons" data-slug-hash="jONeawJ" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05_03B — Responsive Images, srcset part 1">
+            <span>See the Pen <a href="https://codepen.io/jensimmons/pen/jONeawJ">
+            05_03B — Responsive Images, srcset part 1</a> by Jen Simmons (<a href="https://codepen.io/jensimmons">@jensimmons</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <!-- srcset and image width -->
+        <section>
+          <h2>
+            <code>srcset</code> with <em>image width</em> parameters
+          </h2>
+          <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="html,result" data-user="jensimmons" data-slug-hash="WNeyPXL" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05_04A — Responsive Images, sizes">
+            <span>See the Pen <a href="https://codepen.io/jensimmons/pen/WNeyPXL">
+            05_04A — Responsive Images, sizes</a> by Jen Simmons (<a href="https://codepen.io/jensimmons">@jensimmons</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+        
+        <!-- srcset with sizes and media queries -->
+        <section>
+          <h2>
+            <code>srcset</code> &amp; <code>sizes</code> <br> with <em>media queries</em>
+          </h2>
+          <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="html,result" data-user="jensimmons" data-slug-hash="wvwXOYa" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05_04B — Responsive Images, sizes">
+            <span>See the Pen <a href="https://codepen.io/jensimmons/pen/wvwXOYa">
+            05_04B — Responsive Images, sizes</a> by Jen Simmons (<a href="https://codepen.io/jensimmons">@jensimmons</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section>
+          <h2>Review</h2>
+          <p><code>img</code> elements now have the following attributes and values to render responsive images to a range of devices:</p>
+          <ul>
+            <li class="fragment">srcset</li>
+            <li class="fragment">-> pixel density: 1x, 2x, ...</li>
+            <li class="fragment">-> image width: 480w, 980w, ...</li>
+            <li class="fragment">sizes with media queries</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>These are all new <code>img</code> <br>element features, but ...</h2>
+        </section>
+
+        <section>
+          <h2>What can the <code>picture</code> <br>element do?</h2>
+        </section>
+      </section>
+
+      <!-- PICTURE -->
+      <section>
+        <section>
+          Cropping with the <code>picture</code> Element
+        </section>
+
+        <section>
+          <h2><code>source</code> element</h2>
+          <p class="codepen" data-height="365" data-theme-id="light" data-default-tab="html,result" data-user="jensimmons" data-slug-hash="MWgXRgE" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05_05A — Responsive Images, picture">
+            <span>See the Pen <a href="https://codepen.io/jensimmons/pen/MWgXRgE">
+            05_05A — Responsive Images, picture</a> by Jen Simmons (<a href="https://codepen.io/jensimmons">@jensimmons</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section>
+          <h2>Combining techniques</h2>
+          <ul>
+            <li><code>source</code> with
+              <ul>
+                <li><code>srcset</code></li>
+                <li>image width syntax, e.g., <code>320w</code></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://codepen.io/jensimmons/pen/wvwXLQa?editors=1000" target="_blank" rel="noopenner">Simmons' Codepen</a>
+            </li>
+          </ul>
+        </section>
+
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+
+      // Parallax scrolling
+      // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
+      // parallaxBackgroundSize: "2100px 900px",
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: "js/classList.js", condition: function () { return !document.body.classList; } },
+        { src: "js/marked.js", condition: function () { return !!document.querySelector("[data-markdown]"); } },
+        { src: "js/markdown.js", condition: function () { return !!document.querySelector("[data-markdown]"); } },
+        { src: "js/highlight.js", async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: "js/zoom.js", async: true, condition: function () { return !!document.body.classList; } },
+        { src: "js/notes.js", async: true, condition: function () { return !!document.body.classList; } }
+      ]
+    });
+
+  </script>
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+</body>
+
+</html>

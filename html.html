@@ -1,174 +1,181 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-        <title>Writing HTML Lesson</title>
-        <!-- =============================================
+  <title>Writing HTML Lesson</title>
+  <!-- =============================================
             Adapted and modified content from GU Yiling:
             http://justineo.github.io/slideshows/writing-css/
             ==============================================-->
 
-        <meta name="description" content="A brief introduction of CSS.">
-        <meta name="author" content="GU Yiling, modified by Chris Lindgren">
+  <meta name="description" content="A brief introduction of CSS.">
+  <meta name="author" content="GU Yiling, modified by Chris Lindgren">
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/just.css" id="theme">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/just.css" id="theme">
 
-        <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/zenburn.css">
 
-        <style>
-            var::before {
-                content: "[";
-            }
-            var::after {
-                content: "]";
-            }
-            var::before,
-            var::after {
-                color: #666;
-                font-style: normal;
-            }
+  <style>
+    var::before {
+      content: "[";
+    }
 
-            iframe {
-                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-            }
-            span.type::before {
-                content: "‘<";
-            }
-            span.type::after {
-                content: ">’";
-            }
-        </style>
+    var::after {
+      content: "]";
+    }
 
-        <!-- If the query includes "print-pdf", include the PDF print sheet -->
-        <script>
-            if( window.location.search.match( /print-pdf/gi ) ) {
-                var link = document.createElement( "link" );
-                link.rel = "stylesheet";
-                link.type = "text/css";
-                link.href = "../../reveal.js/css/print/pdf.css";
-                document.getElementsByTagName( "head" )[0].appendChild( link );
-            }
-        </script>
+    var::before,
+    var::after {
+      color: #666;
+      font-style: normal;
+    }
 
-        <!--[if lt IE 9]>
+    iframe {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+
+    span.type::before {
+      content: "‘<";
+    }
+
+    span.type::after {
+      content: ">’";
+    }
+  </style>
+
+  <!-- If the query includes "print-pdf", include the PDF print sheet -->
+  <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = "../../reveal.js/css/print/pdf.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+  </script>
+
+  <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
 
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="reveal">
+  <div class="reveal">
 
-            <div class="slides">
-                <section>
-                    <h1>
-                      Writing <abbr title="HyperText Markup Language">HTML</abbr>
-                    </h1>
-                    <small>Some content used from Duckett (2011).</small>
-                </section>
+    <div class="slides">
+      <section>
+        <h1>
+          Writing <abbr title="HyperText Markup Language">HTML</abbr>
+        </h1>
+        <small>Some content used from Duckett (2011).</small>
+      </section>
 
-                <!-- TOC -->
-                <section>
-                    <h2>In this demo-lecture:</h2>
-                    <style>
-                      #overview-list li {
-                          list-style-type: none;
-                      }
+      <!-- TOC -->
+      <section>
+        <h2>In this demo-lecture:</h2>
+        <style>
+          #overview-list li {
+            list-style-type: none;
+          }
 
-                      #overview-list .fa {
-                          display: inline-block;
-                          width: 40px;
-                      }
-                    </style>
-                    <ul id="overview-list">
-                        <li><span class="fa fa-check"></span> General knowledge</li>
-                        <li><span class="fa fa-check"></span> Basic HTML Tags</li>
-                        <li><span class="fa fa-check"></span> Block vs. Inline Elements</li>
-                    </ul>
-                </section>
-                
-                <!-- WHAT'S HTML? -->
-                <section>
+          #overview-list .fa {
+            display: inline-block;
+            width: 40px;
+          }
+        </style>
+        <ul id="overview-list">
+          <li><span class="fa fa-check"></span> General knowledge</li>
+          <li><span class="fa fa-check"></span> Basic HTML Tags</li>
+          <li><span class="fa fa-check"></span> Block vs. Inline Elements</li>
+        </ul>
+      </section>
 
-                    <section>
-                        <h2>What is HTML?</h2>
-                        <p class="fragment"><b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage</p>
-                    </section>
+      <!-- WHAT'S HTML? -->
+      <section>
 
-                    <section>
-                        <h3>Anatomy of a Typical Website</h3>
-                        <ul>
-                            <li class="fragment">
-                                <b>Content</b>: Text, Media
-                            </li>
-                            <li class="fragment">
-                                +&nbsp;&nbsp;<b>HTML</b>: Structure + Semantics
-                            </li>
-                            <li class="fragment">
-                                +&nbsp;&nbsp;&nbsp;<b>CSS</b>: Presentation + Design
-                            </li>
-                            <li class="fragment">
-                                +&nbsp;&nbsp;&nbsp;&nbsp;<b>JS</b>: Interactivity
-                            </li>
-                            <li class="fragment">
-                                = <b>Your Website</b>
-                            </li>
-                        </ul>
-                    </section>
+        <section>
+          <h2>What is HTML?</h2>
+          <p class="fragment"><b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage</p>
+        </section>
 
-                    <section>
-                        <h3>.html files</h3>
-                        <ul>
-                          <li class="fragment">
-                              A "marked up" text-file with tags
-                          </li>
-                          <li class="fragment">
-                              HTML considered a "declarative" language
-                          </li>
-                          <li class="fragment">
-                              Saved with <code>.html</code> extension
-                          </li>
-                          <li class="fragment">
-                              Standardized language of web browsers
-                          </li>
-                          <li class="fragment">
-                              HTML should be Semantic + <a href="http://www.website-accessibility.com/web-accessibility/web-accessibility-basics/how-disabled-use-web.html">Accessible</a>
-                          </li>
-                          <li class="fragment">
-                              &#9758; Create your own practice folder with your lastname within <code>html-practice</code> repo. <code>index.html</code> file.
-                          </li>
-                          <li class="fragment">
-                              &#9758; Create an <code>index.html</code> file within your new folder.
-                          </li>
-                        </ul>
-                    </section>
+        <section>
+          <h3>Anatomy of a Typical Website</h3>
+          <ul>
+            <li class="fragment">
+              <b>Content</b>: Text, Media
+            </li>
+            <li class="fragment">
+              +&nbsp;&nbsp;<b>HTML</b>: Structure + Semantics
+            </li>
+            <li class="fragment">
+              +&nbsp;&nbsp;&nbsp;<b>CSS</b>: Presentation + Design
+            </li>
+            <li class="fragment">
+              +&nbsp;&nbsp;&nbsp;&nbsp;<b>JS</b>: Interactivity
+            </li>
+            <li class="fragment">
+              = <b>Your Website</b>
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                      <h3>Basic Anatomy of an HTML Web Page</h3>
-                      <img src="img/duckett-page-anatomy.jpg" />
-                    </section>
+        <section>
+          <h3>.html files</h3>
+          <ul>
+            <li class="fragment">
+              A "marked up" text-file with tags
+            </li>
+            <li class="fragment">
+              HTML considered a "declarative" language
+            </li>
+            <li class="fragment">
+              Saved with <code>.html</code> extension
+            </li>
+            <li class="fragment">
+              Standardized language of web browsers
+            </li>
+            <li class="fragment">
+              HTML should be Semantic + <a
+                href="http://www.website-accessibility.com/web-accessibility/web-accessibility-basics/how-disabled-use-web.html">Accessible</a>
+            </li>
+            <li class="fragment">
+              &#9758; Create your own practice folder with your lastname within <code>html-practice</code> repo.
+              <code>index.html</code> file.
+            </li>
+            <li class="fragment">
+              &#9758; Create an <code>index.html</code> file within your new folder.
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                        <h3>
-                          Basic Anatomy of an HTML tag
-                        </h3>
-                        <ul>
-                          <li>
-                            Each tag has a "start tag" <code><tag></code>, an "end tag" <code></tag></code>, some content in between them, and multiple types of attributes.
-                          </li>
-                        </ul>
-<pre><code class="html">&lt;tagname attribute="value"&gt;
+        <section>
+          <h3>Basic Anatomy of an HTML Web Page</h3>
+          <img src="img/duckett-page-anatomy.jpg" />
+        </section>
+
+        <section>
+          <h3>
+            Basic Anatomy of an HTML tag
+          </h3>
+          <ul>
+            <li>
+              Each tag has a "start tag" <code><tag></code>, an "end tag" <code></tag></code>, some content in between
+              them, and multiple types of attributes.
+            </li>
+          </ul>
+          <pre><code class="html">&lt;tagname attribute="value"&gt;
   content
 &lt;/tagname&gt;
 
@@ -180,65 +187,67 @@
   &lt;h2&gt;About Me&lt;/h2&gt;
 &lt;/section&gt;
 </code></pre>
-                      <ul>
-                        <li class="fragment">
-                          Tags == declarative "commands" for browsers
-                        </li>
-                      </ul>
-                    </section>
+          <ul>
+            <li class="fragment">
+              Tags == declarative "commands" for browsers
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                      <h3>
-                        Basic Anatomy of an HTML tag
-                      </h3>
-                      <img src="img/duckett-p-tag-anatomy.jpg" />
-                    </section>
+        <section>
+          <h3>
+            Basic Anatomy of an HTML tag
+          </h3>
+          <img src="img/duckett-p-tag-anatomy.jpg" />
+        </section>
 
-                    <section>
-                        <h3>Anatomy of an HTML tag</h3>
-                        <img  src="img/html-anatomy.png"
-                              alt="Screenshot of Codepen of basic HTML tag anatomy." />
-                        <p>
-                          <a href="https://codepen.io/lndgrn/full/PmMPog/" target="_blank">Link to Codepen</a>
-                        </p>
-                    </section>
+        <section>
+          <h3>Anatomy of an HTML tag</h3>
+          <img src="img/html-anatomy.png" alt="Screenshot of Codepen of basic HTML tag anatomy." />
+          <p>
+            <a href="https://codepen.io/lndgrn/full/PmMPog/" target="_blank">Link to Codepen</a>
+          </p>
+        </section>
 
-                    <section>
-                        <h4>DocType + <code>&lt;html&gt;</code></h4>
-                        <figure>
-                            <pre><code class="html">&lt;!doctype html&gt;
+        <section>
+          <h4>DocType + <code>&lt;html&gt;</code></h4>
+          <figure>
+            <pre><code class="html">&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;/html&gt;
 </code></pre>
-                        </figure>
-                        <ul>
-                          <li>
-                            <code>doctype</code>:
-                            <ol>
-                              <li>
-                                tells the browser what type of HTML specification you are writing (<a href="https://en.wikipedia.org/wiki/Document_type_declaration" target="_blank">Wikipedia article on <code>doctype</code></a>).
-                              </li>
-                              <li>
-                                needs to be at start at every HTML page to tell browser which version of HTML you're using (HTML5 here).
-                              </li>
-                              <li>
-                                is not the <code>html</code> tag.
-                              </li>
-                            </ol>
-                          </li>
-                          <li>
-                            <code>html</code>: the root of the page.
-                          </li>
-                          <li class="fragment">
-                            &#9758; Add these tags to your index.html file.
-                          </li>
-                        </ul>
-                    </section>
+          </figure>
+          <ul>
+            <li>
+              <code>doctype</code>:
+              <ol>
+                <li>
+                  tells the browser what type of HTML specification you are writing (<a
+                    href="https://en.wikipedia.org/wiki/Document_type_declaration" target="_blank">Wikipedia article on
+                    <code>doctype</code></a>).
+                </li>
+                <li>
+                  needs to be at start at every HTML page to tell browser which version of HTML you're using (HTML5
+                  here).
+                </li>
+                <li>
+                  is not the <code>html</code> tag.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <code>html</code>: the root of the page.
+            </li>
+            <li class="fragment">
+              &#9758; Add these tags to your index.html file.
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                        <h4><code>&lt;head&gt;</code> element</h4>
-                        <figure>
-                            <pre><code class="html">&lt;!DOCTYPE html&gt;
+        <section>
+          <h4><code>&lt;head&gt;</code> element</h4>
+          <figure>
+            <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
@@ -250,25 +259,27 @@
   &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
-                        </figure>
-                        <ul>
-                          <li>
-                            Contains 2 main tags:
-                            <ol>
-                              <li class="fragment">
-                                "Meta" tags: Info about the page (<a href="https://gist.github.com/kevinSuttle/1997924" target="_blank">comprehensive list</a>). Note how <code>&lt;meta /&gt;</code> tags self-close.
-                              </li>
-                              <li class="fragment">
-                                Resources: For example, <code>&lt;link&gt;</code> tags that tell the browser WHERE to locate CSS stylesheets.
-                              </li>
-                            </ol>
-                        </ul>
-                    </section>
+          </figure>
+          <ul>
+            <li>
+              Contains 2 main tags:
+              <ol>
+                <li class="fragment">
+                  "Meta" tags: Info about the page (<a href="https://gist.github.com/kevinSuttle/1997924"
+                    target="_blank">comprehensive list</a>). Note how <code>&lt;meta /&gt;</code> tags self-close.
+                </li>
+                <li class="fragment">
+                  Resources: For example, <code>&lt;link&gt;</code> tags that tell the browser WHERE to locate CSS
+                  stylesheets.
+                </li>
+              </ol>
+          </ul>
+        </section>
 
-                    <section>
-                        <h4><code>&lt;body&gt;</code> Element</h4>
-                        <figure>
-                          <pre><code class="html">&lt;!DOCTYPE html&gt;
+        <section>
+          <h4><code>&lt;body&gt;</code> Element</h4>
+          <figure>
+            <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
@@ -283,128 +294,141 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                        </figure>
-                        <ul>
-                          <li class="fragment">
-                            The body contains the actual content of the page.</li>
-                          <li class="fragment">
-                            &#9758; Add the body to your page with an utterance.
-                          </li>
-                        </ul>
-                    </section>
+          </figure>
+          <ul>
+            <li class="fragment">
+              The body contains the actual content of the page.</li>
+            <li class="fragment">
+              &#9758; Add the body to your page with an utterance.
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                        <h4>A visual example of what could be written in the <code>&lt;body&gt;</code></h4>
-                        <img  src="img/page-structure.gif"
-                              alt="Visual example of a structured HTML document." />
-                    </section>
+        <section>
+          <h4>A visual example of what could be written in the <code>&lt;body&gt;</code></h4>
+          <img src="img/page-structure.gif" alt="Visual example of a structured HTML document." />
+        </section>
 
-                </section>
+      </section>
 
-                <section>
-                    <h2><code>/* questions? */</code></h2>
-                </section>
+      <section>
+        <h2><code>/* questions? */</code></h2>
+      </section>
 
-                <!-- HTML BASICS -->
-                <section>
+      <!-- HTML BASICS -->
+      <section>
 
-                    <section>
-                        <h2>The Basics of <code>&lt;body&gt;</code> Tags</h2>
-                    </section>
+        <section>
+          <h2>The Basics of <code>&lt;body&gt;</code> Tags</h2>
+        </section>
 
-                    <section>
-                        <h3>Inline vs. Block Elements #1</h3>
-                        <img src="img/duckett-blocks-p361.png" alt="Image from Duckett demonstrating difference between inline and block elements." />
-                    </section>
+        <section>
+          <h3>Inline vs. Block Elements #1</h3>
+          <img src="img/duckett-blocks-p361.png"
+            alt="Image from Duckett demonstrating difference between inline and block elements." />
+        </section>
 
-                    <section>
-                        <h3>Inline vs. Block Elements #2</h3>
-                        <ul>
-                          <li>
-                            Act like "building blocks," so they start on new line in the document.
-                          </li>
-                          <li class="fragment">
-                            Differ from <code>inline</code> elements, since <code>block</code> elements have width <em>and height</em> properties that you can change.
-                          </li>
-                          <li class="fragment">
-                            <code>Inline</code> elements do not start a new line. Their height and width are contingent on the size of the inline object itself.
-                          </li>
-                          <li class="fragment">
-                            With CSS, you can control the spacing between block elements: borders, margins, padding, and background colors.
-                          </li>
-                          <li class="fragment">
-                            Note: The <code>&lt;img&gt;</code> element is actually an inline-block element, so you can modify the dimensional and position properties.
-                          </li>
-                        </ul>
-                    </section>
+        <section>
+          <h3>Inline vs. Block Elements #2</h3>
+          <ul>
+            <li>
+              Act like "building blocks," so they start on new line in the document.
+            </li>
+            <li class="fragment">
+              Differ from <code>inline</code> elements, since <code>block</code> elements have width <em>and height</em>
+              properties that you can change.
+            </li>
+            <li class="fragment">
+              <code>Inline</code> elements do not start a new line. Their height and width are contingent on the size of
+              the inline object itself.
+            </li>
+            <li class="fragment">
+              With CSS, you can control the spacing between block elements: borders, margins, padding, and background
+              colors.
+            </li>
+            <li class="fragment">
+              Note: The <code>&lt;img&gt;</code> element is actually an inline-block element, so you can modify the
+              dimensional and position properties.
+            </li>
+          </ul>
+        </section>
 
-                    <section>
-                        <h4>Block vs. Inline Contexts</h4>
-                        <style>
-                          .reveal .bfc,
-                          .reveal .ifc {
-                              margin: 0 auto 0.5em;
-                              width: 45%;
-                              background-color: rgba(255, 255, 255, 0.1);
-                              border: 5px solid rgba(255, 255, 255, 0.3);
-                          }
-                          #bfc {
-                              float: left;
-                              height: 360px;
-                          }
-                          .ifc {
-                              text-align: left;
-                          }
-                          #ifc {
-                              width: 45%;
-                              height: 360px;
-                              float: right;
-                              text-align: left;
-                          }
-                          .bfc .box {
-                              text-align: center;
-                              line-height: 1.5;
-                          }
-                          .ifc .box {
-                              color: transparent;
-                              white-space: pre-wrap;
-                              word-wrap: break-word;
-                              word-break: break-all;
-                          }
-                        </style>
-                        <div class="bfc" id="bfc">
-                            <div class="box" style="background-color: lightgreen; height: 40px;"></div>
-                            <div class="box" style="background-color: khaki; height: 120px;"></div>
-                            <div class="box" style="background-color: lightblue; height: 70px;"></div>
-                        </div>
-                        <div class="ifc" id="ifc">
-                            <span class="box" style="background-color: lightgreen;">_ _ _ _ _ _ _ _ </span><span class="box" style="background-color: khaki;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: lightblue;">_ _ _ _ _ _ _ _ _ _ _ _  </span><span class="box" style="background-color: yellow;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: greenyellow;">_ _ _ _ _ _ _ _ _ _ _ _ </span>
-                        </div>
-                    </section>
+        <section>
+          <h4>Block vs. Inline Contexts</h4>
+          <style>
+            .reveal .bfc,
+            .reveal .ifc {
+              margin: 0 auto 0.5em;
+              width: 45%;
+              background-color: rgba(255, 255, 255, 0.1);
+              border: 5px solid rgba(255, 255, 255, 0.3);
+            }
+
+            #bfc {
+              float: left;
+              height: 360px;
+            }
+
+            .ifc {
+              text-align: left;
+            }
+
+            #ifc {
+              width: 45%;
+              height: 360px;
+              float: right;
+              text-align: left;
+            }
+
+            .bfc .box {
+              text-align: center;
+              line-height: 1.5;
+            }
+
+            .ifc .box {
+              color: transparent;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              word-break: break-all;
+            }
+          </style>
+          <div class="bfc" id="bfc">
+            <div class="box" style="background-color: lightgreen; height: 40px;"></div>
+            <div class="box" style="background-color: khaki; height: 120px;"></div>
+            <div class="box" style="background-color: lightblue; height: 70px;"></div>
+          </div>
+          <div class="ifc" id="ifc">
+            <span class="box" style="background-color: lightgreen;">_ _ _ _ _ _ _ _ </span><span class="box"
+              style="background-color: khaki;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box"
+              style="background-color: lightblue;">_ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box"
+              style="background-color: yellow;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box"
+              style="background-color: greenyellow;">_ _ _ _ _ _ _ _ _ _ _ _ </span>
+          </div>
+        </section>
 
 
-                </section>
+      </section>
 
-                <section>
-                    <h2><code>/* Let's practice! */</code></h2>
-                </section>
+      <section>
+        <h2><code>/* Let's practice! */</code></h2>
+      </section>
 
-                <!-- HTML WRITING PRACTICE -->
-                <section>
+      <!-- HTML WRITING PRACTICE -->
+      <section>
 
-                    <section>
-                        <h2>Practice Writing <code>&lt;html&gt;</code></h2>
-                        <p>
-                          <small>(Navigate back to your <code>index.html</code> file.)</small>
-                        </p>
-                    </section>
+        <section>
+          <h2>Practice Writing <code>&lt;html&gt;</code></h2>
+          <p>
+            <small>(Navigate back to your <code>index.html</code> file.)</small>
+          </p>
+        </section>
 
-                    <section>
-                        <h3>
-                          Write Semantic, Containing <em>Block</em> Elements
-                        </h3>
-                        <figure>
-                          <pre><code class="html">&lt;!DOCTYPE html&gt;
+        <section>
+          <h3>
+            Write Semantic, Containing <em>Block</em> Elements
+          </h3>
+          <figure>
+            <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
@@ -441,24 +465,24 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                        </figure>
-                    </section>
+          </figure>
+        </section>
 
-                    <section>
-                      <h2>Questions?</h2>
-                    </section>
+        <section>
+          <h2>Questions?</h2>
+        </section>
 
-                    <section>
-                      <h2>Commit and push your changes to Github</h2>
-                    </section>
+        <section>
+          <h2>Commit and push your changes to Github</h2>
+        </section>
 
-                    <section>
-                        <h3>
-                          Write Semantic <em>Inline</em> Elements
-                        </h3>
-                        <p>Let's head over to the code editor.</p>
-                        <figure>
-                          <pre><code class="html">&lt;!DOCTYPE html&gt;
+        <section>
+          <h3>
+            Write Semantic <em>Inline</em> Elements
+          </h3>
+          <p>Let's head over to the code editor.</p>
+          <figure>
+            <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8" /&gt;
@@ -495,75 +519,78 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                        </figure>
-                    </section>
+          </figure>
+        </section>
 
-                    <section>
-                      <h2>Questions?</h2>
-                    </section>
+        <section>
+          <h2>Questions?</h2>
+        </section>
 
-                    <section>
-                      <h2>Commit and push your changes to Github</h2>
-                    </section>
+        <section>
+          <h2>Commit and push your changes to Github</h2>
+        </section>
 
-                </section>
+      </section>
 
-                <section>
-                  <h3>Homework</h3>
-                  <ul>
-                    <li>
-                      Complete this practice code
-                    </li>
-                    <li>
-                      Complete your "First website"
-                    </li>
-                    <li>
-                      Open an issue through your code, if you have a question or need help. Use the appropriate label for your issue: <code>question</code> or <code>help wanted</code>
-                    </li>
-                    <li>
-                      Classmates, please watch out for these requests and help when you can by providing resource links or direct help.
-                    </li>
-                  </ul>
-                </section>
+      <section>
+        <h3>Homework</h3>
+        <ul>
+          <li>
+            Complete this practice code
+          </li>
+          <li>
+            Complete your "First website"
+          </li>
+          <li>
+            Open an issue through your code, if you have a question or need help. Use the appropriate label for your
+            issue: <code>question</code> or <code>help wanted</code>
+          </li>
+          <li>
+            Classmates, please watch out for these requests and help when you can by providing resource links or direct
+            help.
+          </li>
+        </ul>
+      </section>
 
-                <section>
+      <section>
 
-            </div>
+    </div>
 
-        </div>
+  </div>
 
-        <script src="js/head.min.js"></script>
-        <script src="js/reveal.min.js"></script>
+  <script src="js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
 
-        <script>
+  <script>
 
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
-                center: true,
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
 
-                // Parallax scrolling
-                // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
-                // parallaxBackgroundSize: "2100px 900px",
+      // Parallax scrolling
+      // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
+      // parallaxBackgroundSize: "2100px 900px",
 
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: "js/classList.js", condition: function() { return !document.body.classList; } },
-                    { src: "js/marked.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
-                    { src: "js/markdown.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
-                    { src: "js/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: "js/zoom.js", async: true, condition: function() { return !!document.body.classList; } },
-                    { src: "js/notes.js", async: true, condition: function() { return !!document.body.classList; } }
-                ]
-            });
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: "js/classList.js", condition: function () { return !document.body.classList; } },
+        { src: "js/marked.js", condition: function () { return !!document.querySelector("[data-markdown]"); } },
+        { src: "js/markdown.js", condition: function () { return !!document.querySelector("[data-markdown]"); } },
+        { src: "js/highlight.js", async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: "js/zoom.js", async: true, condition: function () { return !!document.body.classList; } },
+        { src: "js/notes.js", async: true, condition: function () { return !!document.body.classList; } }
+      ]
+    });
 
-        </script>
-        <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
-    </body>
+  </script>
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+</body>
+
 </html>
