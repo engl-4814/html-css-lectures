@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Writing HTML + CSS: Index</title>
+  <title>Basic CSS Organization</title>
   <!-- =============================================
-            Adapted reveal.js from GU Yiling:
+            Adapted and modified content from GU Yiling:
             http://justineo.github.io/slideshows/writing-css/
             ==============================================-->
 
-  <meta name="description" content="A review of DITA Topic Types: Task, Concept, and Reference">
-  <meta name="author" content="Chris Lindgren">
+  <meta name="description" content="A brief introduction of CSS.">
+  <meta name="author" content="GU Yiling, modified by Chris Lindgren">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -49,19 +49,6 @@
     span.type::after {
       content: ">’";
     }
-
-    #overview-list li {
-      list-style-type: none;
-    }
-
-    #overview-list .fa {
-      display: inline-block;
-      width: 40px;
-    }
-
-    .left-title {
-      text-align: left;
-    }
   </style>
 
   <!-- If the query includes "print-pdf", include the PDF print sheet -->
@@ -79,47 +66,121 @@
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
 
+
 </head>
 <body>
 
   <div class="reveal">
 
     <div class="slides">
-
+      <!-- Organizing CSS -->
       <section>
-        <h2>Slideshows:</h2>
+        <section>
+          <h3>Guidelines for Writing Readable &amp; Functional CSS</h3>
+        </section>
 
-        <ul id="overview-list">
-          <li>
-            <span class="fa fa-check"></span>
-            <a href="html.html">
-              Writing <code>HTML</code>
-            </a>
-          <li>
-            <span class="fa fa-check"></span>
-            <a href="html-a11y.html">
-              Accessible <code>HTML</code>
-            </a>
-          <li>
-            <span class="fa fa-check"></span>
-            <a href="html-picture.html">
-              <code>img</code> &amp; <code>picture</code>
-            </a>
+        <section>
+          <h4>Documenting &amp; Indexing</h4>
+          <figure>
+            <pre><code class="css">/**
+ * style.css
+ *
+ * Styles for the basic HTML5 homework.
+ *
+ * Index
+ * - Base
+ * - Header
+ * - Article
+ * - Footer (Need to write/design)
+ */
+</code></pre>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Documenting Scheme with Comments</h4>
+          <figure>
+            <img src="img/sample-css-commenting-documenting-scheme.png"
+              alt="Screenshot og basic CSS documentation scheme with comments." />
+          </figure>
+        </section>
+
+        <section>
+          <h4>Guidelines for Ruleset Writing</h4>
+          <ul>
+            <li>each selector on its own new line;</li>
+            <li>a space before the opening brace (<code>{</code>);</li>
+            <li>the opening brace (<code>{</code>) on the same line as the last selector;</li>
+            <li>a space after the colon (<code>:</code>);</li>
+            <li>each declaration on its own new line;</li>
+            <li>each declaration indented by 2 or 4 spaces;</li>
+            <li>a trailing semi-colon (<code>;</code>) at the end of all declarations;</li>
+            <li>the closing brace (<code>}</code>) on its own new line;</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Guidelines for Ruleset Organization</h4>
+        </section>
+
+        <!-- Rule Types -->
+        <section>
+          <h4>Organize by Types (more sophisticated)</h4>
+          <ol>
+            <li>Box display behavior: Any changes to display properties, </li>
+            <li>Box</li>
+            <li>Typography</li>
+          </ol>
+        </section>
+
+        <!-- Alphabetize -->
+        <section>
+          <h4>Alphabetize Declaration Order within Ruleset</h4>
+          <figure>
+            <pre><code class="css">.card {
+  background-color: aliceblue;
+  background-image: linear-gradient(white, dimgrey),
+                    linear-gradient(black, salmon);
+  box-shadow: 1px 1px 1px black,
+              2px 2px 1px 1px salmon inset;
+  color: black;
+  font-size: 1.25rem;
+  padding: 15px;
+}
+</code></pre>
+          </figure>
+        </section>
+
+        <!-- Whitespace -->
+        <section>
+          <h4>Use of Whitespace</h4>
+          <ul>
             <li>
-              <span class="fa fa-check"></span>
-              <a href="css-1.html">
-                Writing <code>CSS</code> #1
-              </a>
-        </ul>
+              Adhere to an agreed upon characters-wide rule (~80 chars)
+            </li>
+            <li>
+              Consistent whitespace; be meaningful about indentation and spaces between blocks, etc.
+            </li>
+          </ul>
+          <figure>
+            <pre><code class="css">article p {
+  font-size: 1.25rem;
+  margin: 15px;
+  padding: 25px;
+}
+</code></pre>
+          </figure>
+        </section>
       </section>
-
     </div>
+
   </div>
 
   <script src="js/head.min.js"></script>
   <script src="js/reveal.min.js"></script>
 
   <script>
+
     // Full list of configuration options available here:
     // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
@@ -145,8 +206,9 @@
         { src: "js/notes.js", async: true, condition: function () { return !!document.body.classList; } }
       ]
     });
+
   </script>
-  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+  <script src="https://static.codepen.io/assets/embed/ei.js"></script>
 </body>
 
 </html>
