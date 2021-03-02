@@ -105,6 +105,7 @@
           </figure>
         </section>
 
+        <!-- Shared Guidelines -->
         <section>
           <h4>Guidelines for Ruleset Writing</h4>
           <ul>
@@ -117,38 +118,6 @@
             <li>a trailing semi-colon (<code>;</code>) at the end of all declarations;</li>
             <li>the closing brace (<code>}</code>) on its own new line;</li>
           </ul>
-        </section>
-
-        <section>
-          <h4>Guidelines for Ruleset Organization</h4>
-        </section>
-
-        <!-- Rule Types -->
-        <section>
-          <h4>Organize by Types (more sophisticated)</h4>
-          <ol>
-            <li>Box display behavior: Any changes to display properties, </li>
-            <li>Box</li>
-            <li>Typography</li>
-          </ol>
-        </section>
-
-        <!-- Alphabetize -->
-        <section>
-          <h4>Alphabetize Declaration Order within Ruleset</h4>
-          <figure>
-            <pre><code class="css">.card {
-  background-color: aliceblue;
-  background-image: linear-gradient(white, dimgrey),
-                    linear-gradient(black, salmon);
-  box-shadow: 1px 1px 1px black,
-              2px 2px 1px 1px salmon inset;
-  color: black;
-  font-size: 1.25rem;
-  padding: 15px;
-}
-</code></pre>
-          </figure>
         </section>
 
         <!-- Whitespace -->
@@ -170,6 +139,38 @@
 }
 </code></pre>
           </figure>
+        </section>
+
+        <section>
+          <h4>Organizing Principles for Rulesets within Declaration Blocks</h4>
+        </section>
+
+        <!-- Alphabetize -->
+        <section>
+          <h4>Alphabetize Declaration Order within Ruleset</h4>
+          <figure>
+            <pre><code class="css">.card {
+  background-color: aliceblue;
+  background-image: linear-gradient(white, dimgrey),
+                    linear-gradient(black, salmon);
+  box-shadow: 1px 1px 1px black,
+              2px 2px 1px 1px salmon inset;
+  color: black;
+  font-size: 1.25rem;
+  padding: 15px;
+}
+</code></pre>
+          </figure>
+        </section>
+
+        <!-- Rule Types -->
+        <section>
+          <h4>Organize by Types (more sophisticated)</h4>
+          <ol>
+            <li><em>Alike Box Properties</em>: Group declarations by how they modify the element(s) in a paticular way. For example, a series of rule declarations that create a card effect to a list item, or a series of rules that modify the background in any way.</li>
+            <li><em>Typography</em>: Any font-related declarations</li>
+            <li>Do some quick digging. Any professionals out there sharing their strategies?  Bring that info to share.</li>
+          </ol>
         </section>
       </section>
     </div>
