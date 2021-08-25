@@ -147,27 +147,66 @@
               Standardized language of web browsers
             </li>
             <li class="fragment">
-              HTML should be Semantic + <a
-                href="http://www.website-accessibility.com/web-accessibility/web-accessibility-basics/how-disabled-use-web.html">Accessible</a>
-            </li>
-            <li class="fragment">
-              &#9758; Create your own practice folder with your lastname within <code>html-practice</code> repo.
-              <code>index.html</code> file.
-            </li>
-            <li class="fragment">
-              &#9758; Create an <code>index.html</code> file within your new folder.
+              HTML defines semantics for "chunks" of information to increase its <a
+                href="http://www.website-accessibility.com/web-accessibility/web-accessibility-basics/how-disabled-use-web.html">Accessibility</a>
             </li>
           </ul>
+        </section>
+        
+        <!-- Create project folder -->
+        <section>
+          <h3>Let's create a practice project folder and .html file</h3>
+          <ol>
+            <li class="fragment">
+              Open Github Desktop and VSC.
+            </li>
+            <li class="fragment">
+              "Clone" the <code>html-exercises</code> repo to our computers.
+            </li>
+            <li class="fragment">
+              In Github Desktop, practice opening the folder in Finder and in VSC.
+            </li>
+            <li class="fragment">
+              In VSC, create your own practice folder with your lastname within <code>html-exercises/1-what-is-html</code>.
+            </li>
+            <li class="fragment">
+              Inside this folder, create an <code>index.html</code> file.
+            </li>
+            <li class="fragment">
+              In Github Desktop, let's see what happenned and push our changes.
+            </li>
+          </ol>
         </section>
 
         <section>
           <h3>Basic Anatomy of an HTML Web Page</h3>
-          <img src="img/duckett-page-anatomy.jpg" />
+<pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+
+  &lt;head&gt;
+    &lt;title&gt;Title of page here&lt;/title&gt;
+    &lt;meta description="Metadata and resources go in the head." /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;h1&gt;Rendered page content here.&lt;/h1&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
         </section>
 
         <section>
           <h3>
             Basic Anatomy of an HTML tag
+          </h3>
+          <img src="img/duckett-p-tag-anatomy.jpg" />
+        </section>
+
+        <!-- Tag attributes -->
+        <section>
+          <h3>
+            Basic Anatomy of an HTML tag with attributes
           </h3>
           <ul>
             <li>
@@ -194,26 +233,21 @@
           </ul>
         </section>
 
+        <!-- Codepen resources -->
         <section>
-          <h3>
-            Basic Anatomy of an HTML tag
-          </h3>
-          <img src="img/duckett-p-tag-anatomy.jpg" />
-        </section>
-
-        <section>
-          <h3>Anatomy of an HTML tag</h3>
+          <h3>Interactive anatomy of an HTML tag</h3>
           <img src="img/html-anatomy.png" alt="Screenshot of Codepen of basic HTML tag anatomy." />
           <p>
             <a href="https://codepen.io/lndgrn/full/PmMPog/" target="_blank">Link to Codepen</a>
           </p>
         </section>
 
+        <!-- DOCTYPE -->
         <section>
           <h4>DocType + <code>&lt;html&gt;</code></h4>
           <figure>
             <pre><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
+&lt;html lang="en"&gt;
 &lt;/html&gt;
 </code></pre>
           </figure>
@@ -244,6 +278,7 @@
           </ul>
         </section>
 
+        <!-- HEAD -->
         <section>
           <h4><code>&lt;head&gt;</code> element</h4>
           <figure>
@@ -265,19 +300,27 @@
               Contains 2 main tags:
               <ol>
                 <li class="fragment">
-                  "Meta" tags: Info about the page (<a href="https://gist.github.com/kevinSuttle/1997924"
-                    target="_blank">comprehensive list</a>). Note how <code>&lt;meta /&gt;</code> tags self-close.
+                  <strong>"Meta"data</strong>: Info about the page (<a href="https://github.com/kevinSuttle/html-meta-tags"
+                    target="_blank">comprehensive list</a>). <br />Note how <code>&lt;meta /&gt;</code> tags self-close.
                 </li>
                 <li class="fragment">
-                  Resources: For example, <code>&lt;link&gt;</code> tags that tell the browser WHERE to locate CSS
+                <strong>Resources</strong>: For example, <code>&lt;link&gt;</code> tags that tell the browser WHERE to locate CSS
                   stylesheets.
                 </li>
               </ol>
           </ul>
         </section>
 
+        <!-- BODY -->
         <section>
           <h4><code>&lt;body&gt;</code> Element</h4>
+          <ul>
+            <li>
+              The body contains the actual content of the page.</li>
+            <li class="fragment">
+              &#9758; Add the body to your page with an utterance.
+            </li>
+          </ul>
           <figure>
             <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -295,19 +338,13 @@
 &lt;/html&gt;
 </code></pre>
           </figure>
-          <ul>
-            <li class="fragment">
-              The body contains the actual content of the page.</li>
-            <li class="fragment">
-              &#9758; Add the body to your page with an utterance.
-            </li>
-          </ul>
         </section>
 
-        <section>
+        <!-- Visual BODY example -->
+        <!-- <section>
           <h4>A visual example of what could be written in the <code>&lt;body&gt;</code></h4>
           <img src="img/page-structure.gif" alt="Visual example of a structured HTML document." />
-        </section>
+        </section> -->
 
       </section>
 
@@ -315,44 +352,44 @@
         <h2><code>/* questions? */</code></h2>
       </section>
 
-      <!-- HTML BASICS -->
+      <!-- HTML ELEMENT BASICS -->
       <section>
 
         <section>
           <h2>The Basics of <code>&lt;body&gt;</code> Tags</h2>
         </section>
 
+        <!-- BLOCK vs. INLINE 1 -->
         <section>
           <h3>Inline vs. Block Elements #1</h3>
           <img src="img/duckett-blocks-p361.png"
             alt="Image from Duckett demonstrating difference between inline and block elements." />
         </section>
 
+        <!-- BLOCK vs. INLINE 2 -->
         <section>
           <h3>Inline vs. Block Elements #2</h3>
           <ul>
             <li>
-              Act like "building blocks," so they start on new line in the document.
+              <code>Block</code> elements act like "building blocks," so they start on new line in the document.
             </li>
             <li class="fragment">
-              Differ from <code>inline</code> elements, since <code>block</code> elements have width <em>and height</em>
-              properties that you can change.
+              Most elements actually are <code>block</code> elements. 
             </li>
             <li class="fragment">
-              <code>Inline</code> elements do not start a new line. Their height and width are contingent on the size of
-              the inline object itself.
+              <code>Inline</code> elements can begin within a line and do not by default start a new line. 
             </li>
             <li class="fragment">
-              With CSS, you can control the spacing between block elements: borders, margins, padding, and background
+              An <code>inline</code> element's width only extends as far as it is defined by its tags.
+            </li>
+            <li class="fragment">
+              With CSS, you can control the spacing between both block and inline elements: borders, margins, padding, and background
               colors.
-            </li>
-            <li class="fragment">
-              Note: The <code>&lt;img&gt;</code> element is actually an inline-block element, so you can modify the
-              dimensional and position properties.
             </li>
           </ul>
         </section>
 
+        <!-- BvsI Visual -->
         <section>
           <h4>Block vs. Inline Contexts</h4>
           <style>
@@ -406,7 +443,6 @@
           </div>
         </section>
 
-
       </section>
 
       <section>
@@ -423,7 +459,7 @@
           </p>
         </section>
 
-        <section>
+        <!-- <section>
           <h3>
             Write Semantic, Containing <em>Block</em> Elements
           </h3>
@@ -466,17 +502,17 @@
 &lt;/html&gt;
 </code></pre>
           </figure>
-        </section>
+        </section> -->
 
-        <section>
+        <!-- <section>
           <h2>Questions?</h2>
-        </section>
+        </section> -->
 
         <section>
           <h2>Commit and push your changes to Github</h2>
         </section>
 
-        <section>
+        <!-- <section>
           <h3>
             Write Semantic <em>Inline</em> Elements
           </h3>
@@ -528,7 +564,7 @@
 
         <section>
           <h2>Commit and push your changes to Github</h2>
-        </section>
+        </section> -->
 
       </section>
 
@@ -539,15 +575,10 @@
             Complete this practice code
           </li>
           <li>
-            Complete your "First website"
+            Complete the next drill before our next class: <code>2-html-fave-things</code>
           </li>
           <li>
-            Open an issue through your code, if you have a question or need help. Use the appropriate label for your
-            issue: <code>question</code> or <code>help wanted</code>
-          </li>
-          <li>
-            Classmates, please watch out for these requests and help when you can by providing resource links or direct
-            help.
+            See the README for directions and what to practice.
           </li>
         </ul>
       </section>
