@@ -230,15 +230,26 @@
           <h3>
             What are attributes?
           </h3>
+          <pre><code class="html">&lt;tagname attribute="value"&gt;
+  content
+&lt;/tagname&gt;
+          </pre>
           <ul>
             <li class="fragment">
               Within each tag has a "opening tag" <code><tag></code>, you can include attributes.
             </li>
             <li class="fragment">
               Some attributes can be used in all elements: <code>id</code> and <code>class</code>
+              <ul>
+                <li><code>id</code>: unique identifier for an element; 1 per page</li>
+                <li><code>class</code>: identifier for a class of shared styled elements; helps select many across site pages</li>
+              </ul>
             </li>
             <li class="fragment">
               Other attributes are specific to specific elements: <code>href</code> for <code>a</code> or <code>link</code>
+            </li>
+            <li class="fragment">
+              MDN's list of <a href="" target="_blank" rel="noopenner">attributes</a>
             </li>
           </ul>
         </section>
@@ -248,11 +259,7 @@
           <h3>
             Example tags with attributes
           </h3>
-          <pre><code class="html">&lt;tagname attribute="value"&gt;
-  content
-&lt;/tagname&gt;
-
-&lt;a href="http://www.google.com" target="_blank" rel="noopenner"&gt;
+          <pre><code class="html">&lt;a href="http://www.google.com" target="_blank" rel="noopenner"&gt;
   Google
 &lt;/a&gt;
 
