@@ -228,16 +228,21 @@
             Basic Anatomy of an HTML tag with attributes
           </h3>
           <ul>
-            <li>
-              Each tag has a "start tag" <code><tag></code>, an "end tag" <code></tag></code>, some content in between
-              them, and multiple types of attributes.
+            <li class="fragment">
+              Within each tag has a "opening tag" <code><tag></code>, you can include attributes.
+            </li>
+            <li class="fragment">
+              Some attributes can be used in all elements: <code>id</code> and <code>class</code>
+            </li>
+            <li class="fragment">
+              Other attributes are specific to specific elements: <code>href</code> for <code>a</code> or <code>link</code>
             </li>
           </ul>
           <pre><code class="html">&lt;tagname attribute="value"&gt;
   content
 &lt;/tagname&gt;
 
-&lt;a href="http://www.google.com"&gt;
+&lt;a href="http://www.google.com" target="_blank" rel="noopenner"&gt;
   Google
 &lt;/a&gt;
 
