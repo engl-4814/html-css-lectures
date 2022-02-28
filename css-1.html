@@ -110,6 +110,73 @@
         </section>
 
         <section>
+          <h3>Elements Defined by Flows<br /><small>Here are the Normal Flow Definitions</small></h3>
+          <ul>
+              <li><em>Block</em> Formatting Context (cf. Duckett, p. 361)</li>
+              <li><em>Inline</em> Formatting Context (cf. Duckett, p. 361)</li>
+          </ul>
+      </section>
+
+      <!-- BFC IFC -->
+      <section>
+          <h4>Review: BFC vs. IFC</h4>
+          <style>
+            .reveal .bfc,
+            .reveal .ifc {
+                margin: 0 auto 0.5em;
+                width: 45%;
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 5px solid rgba(255, 255, 255, 0.3);
+            }
+            #bfc {
+                float: left;
+                height: 360px;
+            }
+            .ifc {
+                text-align: left;
+            }
+            #ifc {
+                width: 45%;
+                height: 360px;
+                float: right;
+                text-align: left;
+            }
+            .bfc .box {
+                text-align: center;
+                line-height: 1.5;
+            }
+            .ifc .box {
+                color: transparent;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+          </style>
+          <div class="bfc" id="bfc">
+              <div class="box" style="background-color: lightgreen; height: 40px;"></div>
+              <div class="box" style="background-color: khaki; height: 120px;"></div>
+              <div class="box" style="background-color: lightblue; height: 70px;"></div>
+          </div>
+          <div class="ifc" id="ifc">
+              <span class="box" style="background-color: lightgreen;">_ _ _ _ _ _ _ _ </span><span class="box" style="background-color: khaki;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: lightblue;">_ _ _ _ _ _ _ _ _ _ _ _  </span><span class="box" style="background-color: yellow;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: greenyellow;">_ _ _ _ _ _ _ _ _ _ _ _ </span>
+          </div>
+        </section>
+
+        <section>
+          <h3>
+            Box Model
+            <br />
+            <small>All elements have the definable properties below.</small>
+          </h3>
+          <figure>
+              <img class="transparent" src="img/box-model.png" alt="box model consists of content, padding, border and margin" style="height: 300px;">
+          </figure>
+          <p>
+            Test it out with your <a href="https://lingeringcode.github.io/lindgren-datastory/" target="_blank">Inspect Element</a>.
+          </p>
+        </section>
+
+        <!-- <section>
           <h3>(Hella) Abridged Specification History</h3>
           <ul>
             <li class="fragment">
@@ -159,7 +226,7 @@
             <li class="fragment">Akin to any web technology, people are constantly revising it through the CSSWG
               standards body: CSS 1, CSS 2, CSS 2.1, CSS 3</li>
           </ul>
-        </section>
+        </section> -->
 
       </section>
 
