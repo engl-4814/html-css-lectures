@@ -255,107 +255,6 @@ nav {
         </section>
       </section>
 
-      <!-- CASCADING AND INHERITANCE -->
-      <section>
-
-        <section>
-          <h2>Cascading &amp; Inheritance</h2>
-        </section>
-
-        <!-- <section>
-          <h3>CSS3 Value processing</h3>
-          <p style="font-size: 85%;"><span>declared → cascaded → specified</span> → computed → used → actual</p>
-          <p><small>cascading → defaulting → absolutizing → calculation → UA adjustment</small></p>
-          <p><small>See some examples of <a href="http://www.w3.org/TR/css3-cascade/#stages-examples" target="_blank">value processing</a>.</small></p>
-        </section> -->
-
-        <!-- Cascade Heuristic -->
-        <section>
-          <h3>Basic Cascading Heuristic</h3>
-          <ol>
-            <li class="fragment">
-              Importance
-              <br />
-              <b>What level of importance does it have?</b> There are 4 tiers, but most are the default <em>normal</em> rules for elements.
-              <br />
-            </li>
-            <li class="fragment">
-              Origin
-              <br />
-              <b>Where did the CSS sheet and rule come from?</b>
-              <br />
-            </li>
-            <li class="fragment">
-              Specificity
-              <br />
-              <b>How specific is the declaration's selector?</b> More specific selections are used over more general.
-              <br />
-            </li>
-            <li class="fragment">
-              Position: Last Rule / Order of appearance
-              <br />
-              <b>Where is the declaration block declared in the stylesheet?</b>
-              <br />
-            </li>
-          </ol>
-        </section>
-
-        <section>
-          <h3>Let's see it in action in CSS Drill #1</h3>
-        </section>
-
-        <!-- <section>
-          <h4>1. Cascading: Origins &amp; importance</h4>
-          <p class="fragment"><span class="fa fa-desktop"></span> <abbr title="user agent">UA</abbr>, <span
-              class="fa fa-user"></span> user, <span class="fa fa-code"></span> author</p>
-          <p class="fragment">and <code>!important</code></p>
-          <p class="fragment">See this article on "<a href="http://www.sitepoint.com/web-foundations/cascade/"
-              target="_blank">The Cascade</a>"</p>
-        </section> -->
-
-        <!-- <section>
-                        <h4>Cascading <small>(origin and importance)</small></h4>
-                        <style>
-                        #order {
-                            width: 40%;
-                            list-style-position: inside;
-                        }
-                        #order li {
-                            padding-left: 20px;
-                        }
-                        </style>
-                        <ol id="order">
-                            <li>Important + UA</li>
-                            <li>Important + user</li>
-                            <li style="border-bottom: 3px solid #666;">Important + author</li>
-                            <li>Normal + author</li>
-                            <li>Normal + user</li>
-                            <li>Normal + UA</li>
-                        </ol>
-                        <p class="fragment"><small>See also <a href="http://www.w3.org/TR/css3-cascade/#cascade-origin">CSS Cascading and Inheritance Level 3</a>.</small></p>
-                    </section> -->
-
-        <!-- <section>
-          <h4>2. Specificity (order based on selector types)</h4>
-          <ol style="list-style-type: lower-alpha;">
-            <li class="fragment">ID<br><code>#main</code></li>
-            <li class="fragment">class<br><code>.title</code></li>
-            <li class="fragment">type<br><code>article</code></li>
-            <li class="fragment">pseudo-class<br><code>:hover</code></li>
-          </ol>
-        </section> -->
-
-        <!-- <section>
-          <h4>Codepen Cascade Example</h4>
-          <p data-height="265" data-theme-id="0" data-slug-hash="BmbZeo" data-default-tab="result" data-user="lndgrn"
-            data-embed-version="2" data-pen-title="Using the cascade in CSS" class="codepen">See the Pen <a
-              href="https://codepen.io/lndgrn/pen/BmbZeo/">Using the cascade in CSS</a> by Chris Lindgren (<a
-              href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-        </section> -->
-
-      </section>
-
       <!-- SYNTAX -->
       <section>
 
@@ -541,12 +440,113 @@ nav {
         </section>
 
         <!-- Practice Prompt -->
-        <section>
+        <!-- <section>
           <h3>Some Selection Practice</h3>
           <p>
             Let's open the drills again!
           </p>
+        </section> -->
+
+      </section>
+
+      <!-- CASCADING AND INHERITANCE -->
+      <section>
+
+        <section>
+          <h2>Cascading &amp; Inheritance</h2>
         </section>
+
+        <!-- <section>
+          <h3>CSS3 Value processing</h3>
+          <p style="font-size: 85%;"><span>declared → cascaded → specified</span> → computed → used → actual</p>
+          <p><small>cascading → defaulting → absolutizing → calculation → UA adjustment</small></p>
+          <p><small>See some examples of <a href="http://www.w3.org/TR/css3-cascade/#stages-examples" target="_blank">value processing</a>.</small></p>
+        </section> -->
+
+        <!-- Cascade Heuristic -->
+        <section>
+          <h3>Basic Cascading Heuristic</h3>
+          <ol>
+            <li class="fragment">
+              Importance
+              <br />
+              <b>What level of importance does it have?</b> There are 4 tiers, but most are the default <em>normal</em> rules for elements.
+              <br />
+            </li>
+            <li class="fragment">
+              Origin
+              <br />
+              <b>Where did the CSS sheet and rule come from?</b>
+              <br />
+            </li>
+            <li class="fragment">
+              Specificity
+              <br />
+              <b>How specific is the declaration's selector?</b> More specific selections are used over more general.
+              <br />
+            </li>
+            <li class="fragment">
+              Position: Last Rule / Order of appearance
+              <br />
+              <b>Where is the declaration block declared in the stylesheet?</b>
+              <br />
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Let's see it in action in CSS Drill #1</h3>
+        </section>
+
+        <!-- <section>
+          <h4>1. Cascading: Origins &amp; importance</h4>
+          <p class="fragment"><span class="fa fa-desktop"></span> <abbr title="user agent">UA</abbr>, <span
+              class="fa fa-user"></span> user, <span class="fa fa-code"></span> author</p>
+          <p class="fragment">and <code>!important</code></p>
+          <p class="fragment">See this article on "<a href="http://www.sitepoint.com/web-foundations/cascade/"
+              target="_blank">The Cascade</a>"</p>
+        </section> -->
+
+        <!-- <section>
+                        <h4>Cascading <small>(origin and importance)</small></h4>
+                        <style>
+                        #order {
+                            width: 40%;
+                            list-style-position: inside;
+                        }
+                        #order li {
+                            padding-left: 20px;
+                        }
+                        </style>
+                        <ol id="order">
+                            <li>Important + UA</li>
+                            <li>Important + user</li>
+                            <li style="border-bottom: 3px solid #666;">Important + author</li>
+                            <li>Normal + author</li>
+                            <li>Normal + user</li>
+                            <li>Normal + UA</li>
+                        </ol>
+                        <p class="fragment"><small>See also <a href="http://www.w3.org/TR/css3-cascade/#cascade-origin">CSS Cascading and Inheritance Level 3</a>.</small></p>
+                    </section> -->
+
+        <!-- <section>
+          <h4>2. Specificity (order based on selector types)</h4>
+          <ol style="list-style-type: lower-alpha;">
+            <li class="fragment">ID<br><code>#main</code></li>
+            <li class="fragment">class<br><code>.title</code></li>
+            <li class="fragment">type<br><code>article</code></li>
+            <li class="fragment">pseudo-class<br><code>:hover</code></li>
+          </ol>
+        </section> -->
+
+        <!-- <section>
+          <h4>Codepen Cascade Example</h4>
+          <p data-height="265" data-theme-id="0" data-slug-hash="BmbZeo" data-default-tab="result" data-user="lndgrn"
+            data-embed-version="2" data-pen-title="Using the cascade in CSS" class="codepen">See the Pen <a
+              href="https://codepen.io/lndgrn/pen/BmbZeo/">Using the cascade in CSS</a> by Chris Lindgren (<a
+              href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        </section> -->
 
       </section>
 
