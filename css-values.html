@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>ENGL 3844: Writing CSS Lesson</title>
+        <!-- =============================================
+            Adapted and modified content from GU Yiling:
+            http://justineo.github.io/slideshows/writing-css/
+            ==============================================-->
+
+        <meta name="description" content="A brief introduction of CSS.">
+        <meta name="author" content="GU Yiling, modified by Chris Lindgren">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/just.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="css/zenburn.css">
+
+        <style>
+            var::before {
+                content: "[";
+            }
+            var::after {
+                content: "]";
+            }
+            var::before,
+            var::after {
+                color: #666;
+                font-style: normal;
+            }
+
+            iframe {
+                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            }
+            span.type::before {
+                content: "‘<";
+            }
+            span.type::after {
+                content: ">’";
+            }
+        </style>
+
+        <!-- If the query includes "print-pdf", include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( "link" );
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = "../../reveal.js/css/print/pdf.css";
+                document.getElementsByTagName( "head" )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+                <section>
+                    <h1>
+                      <abbr title="Cascading Style Sheets">CSS</abbr> Values &amp; Positioning
+                    </h1>
+                    <small>Modified from slideshow by GU Yiling (<a href="http://justineo.github.io/slideshows/writing-css/" target="_blank">original</a>).</small>
+                </section>
+                
+                <!-- VALUES / UNITS -->
+                <section>
+
+                    <section>
+                        <h2>Values and Units</h2>
+                        <ul>
+                          <li class="fragment"><code>15px</code></li>
+                          <li class="fragment"><code>1.25em</code></li>
+                          <li class="fragment"><code>rebeccapurple == #663399</code></li>
+                          <li class="fragment"><code>url(logo.png)</code></li>
+                          <li class="fragment">...</li>
+                        </ul>
+                    </section>
+
+                    <!-- NUMERICALS -->
+                    <section>
+                        <h3>Numerical Values</h3>
+                        <ul>
+                            <li class="fragment">Integers: <span class="type">integer</span>
+                              <br />
+                              <small class="fragment"><code>border-radius: 15px; z-index: 1; order: 3;</code></small>
+                            </li>
+                            <li class="fragment">Numbers: <span class="type">number</span><br><small class="fragment"><code>line-height: 1.5; flex: 0.618;</code></small></li>
+                            <li class="fragment">Percentages: <span class="type">percentage</span><br><small class="fragment"><code>width: 80%; font-size: 120%;</code></small></li>
+                        </ul>
+                    </section>
+
+                    <!-- COLORS -->
+                    <section>
+                        <h3>Color Values</h3>
+                        <ul>
+                            <li class="fragment">Keywords<br><small><code style="color: lightgreen;">lightgreen</code>, <code style="color: gold">gold</code>, <code style="color: olivedrab;">olivedrab</code>, etc.</small></li>
+                            <li class="fragment">Hexadecimal notation<br><small><code style="color: #69c;">#69c</code>, <code style="color: #abcdef;">#abcdef</code>, <code style="color: #eee;">#eee</code>, <code style="color: #123456;background-color:#fff;">#123456</code> ...</small></li>
+                            <li class="fragment">Functional notation<br><small><code style="color: rgb(200, 150, 100);">rgb(200, 150, 100)</code>, <code style="color: rgb(232, 146, 183);">rgba(200, 150, 100, 0.6)</code>, <code style="color: hsla(120, 100%, 50%, 0.5);">hsla(120, 100%, 50%, 0.5)</code>, ...</small></li>
+                        </ul>
+                        <p class="fragment"><small>See more in <a href="http://dev.w3.org/csswg/css-color/">CSS Color Module Level 4</a>.</small></p>
+                    </section>
+
+                    <!-- ABSOLUTE -->
+                    <section>
+                      <h4><a href="https://drafts.csswg.org/css-values/#absolute-lengths" target="_blank">Absolute lengths</a></h4>
+                      <table class="fragment visible current-fragment" style="font-size: 70%;" data-fragment-index="0">
+                        <thead>
+                          <tr>
+                            <th>Type</th>
+                            <th>Value Assignment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><code>px</code></td>
+                            <td>1px = 1/96th of 1 inch</td>
+                          </tr>
+                          <tr>
+                            <td><code>pt</code></td>
+                            <td>1pt = 1/72nd of 1in</td>
+                          </tr>
+                          <tr>
+                            <td><code>in</code></td>
+                            <td>1in = 2.54cm = 96px</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p class="fragment">
+                        Extra tidbit: Learn about how pixels are defined across it as being <a href="https://hacks.mozilla.org/2013/09/css-length-explained/" target="_blank">physical or digital</a>.
+                      </p>
+                      <!-- <figure class="fragment">
+                          <img src="img/pixel.png" alt="Pixels must become larger if the viewing distance increases.">
+                      </figure> -->
+                  </section>
+
+                    <!-- relative values -->
+                    <section>
+                        <h3>
+                          Relative-Length Values
+                          <br />
+                          (<a href="https://drafts.csswg.org/css-values/#font-relative-lengths" target="_blank">csswg spec</a>)
+                        </h3>
+                        <ul>
+                          <li class="fragment">
+                            Values computed relative to another value declared elsewhere.
+                          </li>
+                          <li class="fragment">
+                            Font-Relative: <code>em</code> &amp; <code>rem</code>
+                          </li>
+                          <li class="fragment">
+                            Relative to Parent-Container Width Values: <code>75%</code> (depends on rule being applied)
+                          </li>
+                          <li class="fragment">
+                            Relative to Viewport: <code>vw</code> &amp; <code>vh</code>
+                          </li>
+                          <li class="fragment">
+                            Numerous others: <code>ex</code>, <code>ch</code>, etc.
+                          </li>
+                          
+                        </ul>
+                    </section>
+
+                    <section>
+                      <h4>Font-Relative Length Values</h4>
+                      <p data-height="350" data-theme-id="0" data-slug-hash="GOYoRy" data-default-tab="html,result" data-user="lndgrn" data-embed-version="2" data-pen-title="Basic heading level hierarchies" class="codepen">See the Pen <a href="https://codepen.io/lndgrn/pen/GOYoRy/">Basic heading level hierarchies</a> by Chris Lindgren (<a href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                      <h4>Absolute vs. Percentages vs. Other Relative Lengths</h4>
+                      <iframe width="100%" height="700px" style="overflow-y: scrollable;" src="https://mdn.github.io/css-examples/learn/values-units/percentage.html" loading="lazy" class="ui-droppable"></iframe>
+                    </section>
+
+                    <!-- <section>
+                        <h3>String Values</h3>
+                        <figure>
+                          <p data-height="265" data-theme-id="0" data-slug-hash="yPqPGB" data-default-tab="html,result" data-user="lndgrn" data-embed-version="2" data-pen-title="Using string values for CSS selection and content declaration" class="codepen">See the Pen <a href="https://codepen.io/lndgrn/pen/yPqPGB/">Using string values for CSS selection and content declaration</a> by Chris Lindgren (<a href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                        </figure>
+                    </section> -->
+
+                    <section>
+                        <h3>Resource Locators: <span class="type">url</span></h3>
+                        <pre><code class="css">body {
+  background: url(../img/starrynight.png);
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+  ...
+}
+</code></pre>
+                    </section>
+
+                    <!-- <section>
+                        <h3>Recap</h3>
+                        <ul>
+                            <li>Data types: <span class="type">numbers</span>, <span class="type">integers</span>, <span class="type">lengths</span>, <span class="type">colors</span>, ...</li>
+                            <li>Length: relative vs. absolute</li>
+                            <li>Color: keywords, hex, rgb(a), hsl(a), ...</li>
+                        </ul>
+                    </section> -->
+
+                </section>
+                <section>
+                  <code>/* questions? */</code>
+                </section>
+
+                <!-- POSITIONING -->
+                <section>
+
+                    <section>
+                        <h2>Positioning Basics</h2>
+                    </section>
+
+                    <!-- <section>
+                        <h3>Elements Defined by Flows<br /><small>Here are the Normal Flow Definitions</small></h3>
+                        <ul>
+                            <li><em>Block</em> Formatting Context (cf. Duckett, p. 361)</li>
+                            <li><em>Inline</em> Formatting Context (cf. Duckett, p. 361)</li>
+                        </ul>
+                    </section> -->
+
+                    <section>
+                        <h4>Review: BFC vs. IFC</h4>
+                        <style>
+                          .reveal .bfc,
+                          .reveal .ifc {
+                              margin: 0 auto 0.5em;
+                              width: 45%;
+                              background-color: rgba(255, 255, 255, 0.1);
+                              border: 5px solid rgba(255, 255, 255, 0.3);
+                          }
+                          #bfc {
+                              float: left;
+                              height: 360px;
+                          }
+                          .ifc {
+                              text-align: left;
+                          }
+                          #ifc {
+                              width: 45%;
+                              height: 360px;
+                              float: right;
+                              text-align: left;
+                          }
+                          .bfc .box {
+                              text-align: center;
+                              line-height: 1.5;
+                          }
+                          .ifc .box {
+                              color: transparent;
+                              white-space: pre-wrap;
+                              word-wrap: break-word;
+                              word-break: break-all;
+                          }
+                        </style>
+                        <div class="bfc" id="bfc">
+                            <div class="box" style="background-color: lightgreen; height: 40px;"></div>
+                            <div class="box" style="background-color: khaki; height: 120px;"></div>
+                            <div class="box" style="background-color: lightblue; height: 70px;"></div>
+                        </div>
+                        <div class="ifc" id="ifc">
+                            <span class="box" style="background-color: lightgreen;">_ _ _ _ _ _ _ _ </span><span class="box" style="background-color: khaki;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: lightblue;">_ _ _ _ _ _ _ _ _ _ _ _  </span><span class="box" style="background-color: yellow;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: greenyellow;">_ _ _ _ _ _ _ _ _ _ _ _ </span>
+                        </div>
+                    </section>
+
+                    <!-- <section>
+                        <h3>
+                          Box Model
+                          <br />
+                          <small>All elements have the definable properties below.</small>
+                        </h3>
+                        <figure>
+                            <img class="transparent" src="img/box-model.png" alt="box model consists of content, padding, border and margin" style="height: 300px;">
+                        </figure>
+                        <p>
+                          Test it out with your <a href="https://lingeringcode.github.io/lindgren-datastory/" target="_blank">Inspect Element</a>.
+                        </p>
+                    </section> -->
+
+                    <section>
+                        <h3>
+                          Positioning Schemes for Different Element Flows &amp; Behaviors
+                        </h3>
+                        <ul>
+                            <li class="fragment"><code>position: default</code> (normal)</li>
+                            <li class="fragment"><code>position: absolute</code></li>
+                            <li class="fragment"><code>position: fixed</code></li>
+                            <li class="fragment"><code>position: relative</code></li>
+                            <li class="fragment"><code>float: [left, right, none]</code></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Float positioning</h3>
+                        <style>
+                        #float span {
+                            opacity: 0.3;
+                        }
+                        </style>
+                        <div class="ifc" id="float">
+                            <div class="box" style="display: inline-block; width: 200px; height: 150px; line-height: 150px; text-align: center; margin: 2px; background-color: goldenrod; color: #fff; float: left;">float: left;</div><span class="box" style="background-color: lightgreen;">_ _ _ _ _ _ _ _ </span><span class="box" style="background-color: khaki;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: lightblue;">_ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: yellow;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span><span class="box" style="background-color: greenyellow;">_ _ _ _ _ _ _ _ _ _ _ _ </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Fixed vs. Absolute Positioning</h3>
+                        <ul>
+                          <li class="fragment">Rough main difference:
+                            <br />>> <code>fixed</code> positions an element based on the <strong>viewport</strong>.
+                            <br />>> <code>absolute</code> positions an element based on the closest parent <strong>containing block</strong>.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Example: <code>fixed</code> &amp; <code>absolute</code></h3>
+
+                        <figure>
+                          <p data-height="365" data-theme-id="0" data-slug-hash="vNXrGE" data-default-tab="html,result" data-user="lndgrn" data-embed-version="2" data-pen-title="Containing blocks and position properties" class="codepen">See the Pen <a href="https://codepen.io/lndgrn/pen/vNXrGE/">Containing blocks and position properties</a> by Chris Lindgren (<a href="https://codepen.io/lndgrn">@lndgrn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        </figure>
+
+                    </section>
+
+                    <!-- <section>
+                        <h3>Recap</h3>
+                        <ul>
+                            <li class="fragment">
+                              Box model
+                            </li>
+                            <li class="fragment">
+                              4 position schemes:<br>normal flow, float, absolute, and fixed
+                            </li>
+                            <li class="fragment">
+                              Coming next Tuesday: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank"><code>display</code> behaviors</a>. Notably, the CSS Grid display.
+                            </li>
+                        </ul>
+                    </section> -->
+
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li><a href="http://quirksmode.org/">QuirksMode.org</a></li>
+                        <li><a href="http://caniuse.com/">Can I use</a></li>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
+                // parallaxBackgroundSize: "2100px 900px",
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: "js/classList.js", condition: function() { return !document.body.classList; } },
+                    { src: "js/marked.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
+                    { src: "js/markdown.js", condition: function() { return !!document.querySelector( "[data-markdown]" ); } },
+                    { src: "js/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: "js/zoom.js", async: true, condition: function() { return !!document.body.classList; } },
+                    { src: "js/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+        <script src="https://static.codepen.io/assets/embed/ei.js"></script>
+    </body>
+</html>
